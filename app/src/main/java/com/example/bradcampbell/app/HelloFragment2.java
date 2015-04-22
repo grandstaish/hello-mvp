@@ -33,6 +33,10 @@ public class HelloFragment2 extends Fragment implements HelloView2 {
         super.onViewCreated(view, savedInstanceState);
         textView = (TextView) view.findViewById(R.id.text);
         presenter.bindView(this);
+    }
+
+    @Override public void onResume() {
+        super.onResume();
         isDestroyedBySystem = false;
     }
 

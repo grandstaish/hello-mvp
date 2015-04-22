@@ -50,6 +50,10 @@ public class HelloFragment1 extends Fragment implements HelloView1 {
             }
         });
         presenter.bindView(this);
+    }
+
+    @Override public void onResume() {
+        super.onResume();
         isDestroyedBySystem = false;
     }
 
