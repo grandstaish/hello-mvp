@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hello MVP</string>
+    <string name="help">Try changing configurations!</string>
+    <string name="button">Show a new view</string>
+</resources>
