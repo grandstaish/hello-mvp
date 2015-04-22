@@ -13,7 +13,7 @@ public class HelloFragment2 extends Fragment implements HelloView2 {
     private static final String TAG = HelloFragment2.class.getName();
 
     private PresenterCache presenterCache = PresenterCache.getInstance();
-    private boolean isDestroyedBySystem = false;
+    private boolean isDestroyedBySystem;
     private HelloPresenter2 presenter;
 
     private TextView textView;
@@ -33,6 +33,7 @@ public class HelloFragment2 extends Fragment implements HelloView2 {
         super.onViewCreated(view, savedInstanceState);
         textView = (TextView) view.findViewById(R.id.text);
         presenter.bindView(this);
+        isDestroyedBySystem = false;
     }
 
     @Override public void onSaveInstanceState(@NonNull Bundle outState) {
