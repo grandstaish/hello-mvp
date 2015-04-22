@@ -26,7 +26,7 @@ public class HelloFragment2 extends Fragment implements HelloView2 {
     @Nullable @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_hello1, container, false);
+        return inflater.inflate(R.layout.fragment_hello2, container, false);
     }
 
     @Override public void onViewCreated(View view, Bundle savedInstanceState) {
