@@ -14,7 +14,7 @@ public class HelloFragment1 extends Fragment implements HelloView1 {
     private static final String TAG = HelloFragment1.class.getName();
 
     private PresenterCache presenterCache = PresenterCache.getInstance();
-    private boolean isDestroyedBySystem = false;
+    private boolean isDestroyedBySystem;
     private HelloPresenter1 presenter;
 
     private Callbacks callbacks;
@@ -50,6 +50,7 @@ public class HelloFragment1 extends Fragment implements HelloView1 {
             }
         });
         presenter.bindView(this);
+        isDestroyedBySystem = false;
     }
 
     @Override public void onSaveInstanceState(@NonNull Bundle outState) {
