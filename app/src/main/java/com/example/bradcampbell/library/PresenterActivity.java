@@ -38,13 +38,11 @@ public class PresenterActivity extends AppCompatActivity implements PresenterCac
     }
 
     @Override public long generateId() {
-        checkNonConfigurationInstance();
         return nonConfigurationInstance.nextId.getAndIncrement();
     }
 
     @SuppressWarnings("unchecked") // Handled internally
     @Override public final <T extends Presenter> T getPresenter(long index) {
-        checkNonConfigurationInstance();
         T p;
         try {
             p = (T) nonConfigurationInstance.presenters.get(index);
@@ -55,15 +53,7 @@ public class PresenterActivity extends AppCompatActivity implements PresenterCac
     }
 
     @Override public void setPresenter(long index, Presenter presenter) {
-        checkNonConfigurationInstance();
         nonConfigurationInstance.presenters.put(index, presenter);
-    }
-
-    private void checkNonConfigurationInstance() {
-        if (nonConfigurationInstance == null) {
-            throw new RuntimeException(getClass().getSimpleName() + " needs to be created before" +
-                    "trying to access presenters");
-        }
     }
 
     private static class NonConfigurationInstance {
