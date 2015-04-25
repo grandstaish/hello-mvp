@@ -57,8 +57,8 @@ public class PresenterActivity extends AppCompatActivity implements PresenterCac
     }
 
     private static class NonConfigurationInstance {
-        private Map<Long, Presenter> presenters = new HashMap<>();
-        private AtomicLong nextId = new AtomicLong(0);
+        private Map<Long, Presenter> presenters;
+        private AtomicLong nextId;
         public NonConfigurationInstance(long seed) {
             presenters = new HashMap<>();
             nextId = new AtomicLong(seed);
